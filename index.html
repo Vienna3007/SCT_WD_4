@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            TaskFlow
+        </div>
+
+        <nav>
+
+<ul>
+    <li class="active" onclick="showAllTasks()">Dashboard</li>
+    <li onclick="showAllTasks()">Tasks</li>
+    <li onclick="showCompletedTasks()">Completed</li>
+    <li onclick="showSettings()">Settings</li>
+</ul>
+
+        </nav>
+
+        <!-- USER CARD -->
+
+        <div class="sidebar-profile">
+
+            <img
+                src="https://i.pravatar.cc/150?img=12"
+                alt="User">
+
+            <h4>John Doe</h4>
+
+            <p>Product Designer</p>
+
+            <button onclick="showProfile()">
+                View Profile
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <div class="topbar">
+
+            <h2>Task Management Dashboard</h2>
+
+            <div class="top-right">
+
+                <div
+                    class="account-section"
+                    onclick="showProfile()">
+
+                    <img
+                        src="https://i.pravatar.cc/150?img=12"
+                        alt="User">
+
+                    <div>
+
+                        <h4>John Doe</h4>
+
+                        <span>Product Designer</span>
+
+                    </div>
+
+                </div>
+
+                <button id="addTaskBtn">
+                    + New Task
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="card">
+
+                <h3 id="totalTasks">0</h3>
+
+                <p>Total Tasks</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3 id="completedTasks">0</h3>
+
+                <p>Completed</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3 id="pendingTasks">0</h3>
+
+                <p>Pending</p>
+
+            </div>
+
+        </div>
+
+        <!-- TASK TABLE -->
+
+        <div class="task-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Task</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                        <th>Assignee</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="taskTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <!-- ADD TASK MODAL -->
+
+    <div class="modal" id="taskModal">
+
+        <div class="modal-content">
+
+            <h2>Add New Task</h2>
+
+            <input
+                type="text"
+                id="taskName"
+                placeholder="Task Name">
+
+            <input
+                type="date"
+                id="taskDate">
+
+            <select id="taskPriority">
+
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+
+            </select>
+
+            <button onclick="saveTask()">
+                Save Task
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- PROFILE MODAL -->
+
+    <div
+        class="profile-page"
+        id="profilePage">
+
+        <div class="profile-card">
+
+            <span
+                class="close-profile"
+                onclick="closeProfile()">
+
+                ✖
+
+            </span>
+
+            <div class="profile-avatar">
+
+                <img
+                    src="https://i.pravatar.cc/300?img=12"
+                    alt="User">
+
+            </div>
+
+            <h2>John Doe</h2>
+
+            <p>Product Designer</p>
+
+            <div class="profile-info">
+
+                <p>📧 john.doe@email.com</p>
+
+                <p>🏢 Design Team</p>
+
+                <p>📍 New York, USA</p>
+
+                <p>🟢 Active Member</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
